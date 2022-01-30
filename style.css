@@ -9,6 +9,8 @@ canvas {
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
   --medium-bg: rgba(44, 44, 44, 0.95);
+  --light-bg: rgba(163, 224, 235, 0.95);
+  --light-bg: rgba(255, 255, 255, 0.95);
   --spacing: 350px;
 
   font-family: brandon-grotesque, sans-serif;
@@ -68,6 +70,14 @@ sectionLight {
   line-height: 1.5;
   margin-bottom: var(--spacing);
 }
+sectionEnd {
+  grid-column: 3 / 10;
+  padding: 1.5rem;
+  background: var(--medium-bg);
+  font-size: 1.5rem;
+  line-height: 1.75;
+  margin-bottom: var(--spacing);
+}
 
 blockquote {
   margin: 0;
@@ -77,8 +87,8 @@ blockquote {
 }
 
 blockquote p {
-  color: rgb(9, 1, 19);
-  background-color: rgba(65, 113, 128, 0.794);
+  color: rgb(191, 241, 239);
+  background-color: rgba(1, 15, 19, 0.794);
   font-size: 4rem;
   display: inline;
   line-height: 1.11;
@@ -90,10 +100,15 @@ trueBlockquote {
   grid-column: 2 / span 9;
   margin-bottom: var(--spacing);
 }
-h4,
 trueBlockquote p {
   color: black;
   background-color: whitesmoke;
+  font-size: 2rem;
+  display: inline;
+  line-height: 1.4;
+}
+h4 {
+  color: rgb(98, 125, 155);
   font-size: 2rem;
   display: inline;
   line-height: 1.4;
@@ -119,7 +134,7 @@ a:visited {
 }
 
 a:hover {
-  color: #32295e;
+  color: #77b7ec;
   background-color: transparent;
   text-decoration: underline;
 }

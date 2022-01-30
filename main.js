@@ -85,15 +85,107 @@ TicTacToe.position.z = 9
 TicTacToe.position.x = -2;
 TicTacToe.position.y = 0;
 
+const bruceSize = 1;
+const bruceschneierTexture= new THREE.TextureLoader().load('BruceSchneier.jpg');
+const BruceSchneier = new THREE.Mesh(
+  new THREE.BoxGeometry(bruceSize, bruceSize, bruceSize),
+  new THREE.MeshBasicMaterial( {map: bruceschneierTexture} )
+)
+scene.add(BruceSchneier)
+BruceSchneier.position.z = 15.5
+BruceSchneier.position.x = 2.1;
+BruceSchneier.position.y = 0.15;
+
+const securedropSize = 2;
+const securedropTexture= new THREE.TextureLoader().load('SecureDrop.jpg');
+const SecureDrop = new THREE.Mesh(
+  new THREE.BoxGeometry(securedropSize, securedropSize, securedropSize),
+  new THREE.MeshBasicMaterial( {map: securedropTexture} )
+)
+scene.add(SecureDrop)
+SecureDrop.position.z = 20
+SecureDrop.position.x = 2.6;
+SecureDrop.position.y = -0.05;
+
+const cSize = 0.5;
+const cppSize = 0.75;
+const htmlSize = 0.4;
+const javaSize = 1.5;
+const javascriptSize = 0.75;
+const phpSize = 0.5;
+const pythonSize = 1.5;
+const swiftSize = 0.75;
+const cTexture= new THREE.TextureLoader().load('c.png');
+const cppTexture= new THREE.TextureLoader().load('cpp.jpg');
+const htmlTexture= new THREE.TextureLoader().load('html.png');
+const javaTexture= new THREE.TextureLoader().load('java.png');
+const javascriptTexture= new THREE.TextureLoader().load('javascript.png');
+const phpTexture= new THREE.TextureLoader().load('php.jpg');
+const pythonTexture= new THREE.TextureLoader().load('python.png');
+const swiftTexture= new THREE.TextureLoader().load('swift.png');
+const c = new THREE.Mesh(new THREE.BoxGeometry(cSize, cSize, cSize),new THREE.MeshBasicMaterial( {map: cTexture} ))
+const cpp = new THREE.Mesh(new THREE.BoxGeometry(cppSize, cppSize, cppSize), new THREE.MeshBasicMaterial( {map: cppTexture} ))
+const html = new THREE.Mesh(new THREE.BoxGeometry(htmlSize, htmlSize, htmlSize),new THREE.MeshBasicMaterial( {map: htmlTexture} ))
+const java = new THREE.Mesh(new THREE.BoxGeometry(javaSize, javaSize, javaSize),new THREE.MeshBasicMaterial( {map: javaTexture} ))
+const javascript = new THREE.Mesh(new THREE.BoxGeometry(javascriptSize, javascriptSize, javascriptSize),new THREE.MeshBasicMaterial( {map: javascriptTexture} ))
+const php = new THREE.Mesh(new THREE.BoxGeometry(phpSize, phpSize, phpSize),new THREE.MeshBasicMaterial( {map: phpTexture} ))
+const python = new THREE.Mesh(new THREE.BoxGeometry(pythonSize, pythonSize, pythonSize),new THREE.MeshBasicMaterial( {map: pythonTexture} ))
+const swift = new THREE.Mesh(new THREE.BoxGeometry(swiftSize, swiftSize, swiftSize),new THREE.MeshBasicMaterial( {map: swiftTexture} ))
+scene.add(c)
+scene.add(cpp)
+scene.add(html)
+scene.add(java)
+scene.add(javascript)
+scene.add(php)
+scene.add(python)
+scene.add(swift)
+
+c.position.z = 27
+c.position.x = 2.5;
+c.position.y = -0.75;
+
+cpp.position.z = 27
+cpp.position.x = 1.5;
+cpp.position.y = -1;
+
+html.position.z = 27.8
+html.position.x = 1.25;
+html.position.y = 0.2;
+
+java.position.z = 25.25
+java.position.x = 2.5;
+java.position.y = 0.5;
+
+javascript.position.z = 27
+javascript.position.x = 1.5;
+javascript.position.y = 1;
+
+php.position.z = 27.5
+php.position.x = 0.7;
+php.position.y = 1.1;
+
+python.position.z = 27
+python.position.x = -0.12;
+python.position.y = -0.42;
+
+swift.position.z = 26.5
+swift.position.x = 1.25;
+swift.position.y = 0;
+
+
+
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
 
   Jacob.rotation.y += 0.0035;
-  Jacob.rotation.z += 0.0035;
-  TicTacToe.rotation.z += 0.0025;
+  //Jacob.rotation.z += 0.0035;
+  TicTacToe.rotation.x += 0.0025;
   TicTacToe.rotation.y += 0.0035;
   Tetris.rotation.y += 0.015;
-  Tetris.rotation.z += 0.01;
+  Tetris.rotation.z -= 0.01;
+  BruceSchneier.rotation.y -= 0.01
+  //BruceSchneier.rotation.z -= 0.008
+  SecureDrop.rotation.y += 0.005
 
   camera.position.z = t * -0.005;
   camera.position.x = t * -0.0004;
@@ -104,10 +196,38 @@ moveCamera();
 
 function animate(){
   requestAnimationFrame( animate );
-  TicTacToe.rotation.z += 0.00005;
+  Jacob.rotation.y += 0.00005;
+  TicTacToe.rotation.x += 0.00005;
   TicTacToe.rotation.y += 0.00007;
   Tetris.rotation.y += 0.0003;
-  Tetris.rotation.z += 0.0002;
+  Tetris.rotation.z -= 0.0002;
+  BruceSchneier.rotation.y -= 0.00005
+  SecureDrop.rotation.y += 0.0005
+  //BruceSchneier.rotation.z -= 0.00004
+  c.rotation.x += 0.00025
+  c.rotation.y -= 0.0004
+  c.rotation.z -= 0.0003
+  cpp.rotation.x -= 0.00012
+  cpp.rotation.y += 0.00012
+  cpp.rotation.z -= 0.00012
+  html.rotation.x += 0.00018
+  html.rotation.y += 0.00018
+  html.rotation.z += 0.00018
+  java.rotation.x -= 0.0001
+  java.rotation.y += 0.00013
+  java.rotation.z -= 0.00009
+  javascript.rotation.x -= 0.00011
+  javascript.rotation.y += 0.00011
+  javascript.rotation.z += 0.00011
+  php.rotation.y -= 0.0002
+  php.rotation.x -= 0.0002
+  php.rotation.z -= 0.0002
+  python.rotation.x += 0.00017
+  python.rotation.y += 0.00017
+  python.rotation.z += 0.00017
+  swift.rotation.x += 0.00013
+  swift.rotation.y -= 0.00013
+  swift.rotation.z -= 0.00013
 
   controls.update();
 
